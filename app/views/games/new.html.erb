@@ -5,5 +5,6 @@
 <form action="/score" method="post" >
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <input type="text" name="word" type="hidden">
+  <input id="tags_list" name="tags_list" type="hidden" value=<%= @letters %>/>
   <input type="submit">
 </form>

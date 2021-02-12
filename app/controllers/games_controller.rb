@@ -7,17 +7,13 @@ class GamesController < ApplicationController
     @letters
   end
 
-  # def english_word?(word)
-  #   url = "https://wagon-dictionary.herokuapp.com/#{word}"
-  #   user_serialized = open(url).read
-  #   json_file = JSON.parse(user_serialized)
-  #   json_file["found"]
-  # end
-
   def score
     url = "https://wagon-dictionary.herokuapp.com/#{params[:word]}"
     user_serialized = open(url).read
     json_file = JSON.parse(user_serialized)
     @english_word = json_file["found"]
+
+    # @grid = @letters.map { |letter|
+    #   letter }
   end
 end
