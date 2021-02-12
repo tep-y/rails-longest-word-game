@@ -1,0 +1,12 @@
+<h1>Result</h1>
+
+<% if @english_word == true %>
+<strong>Congratulations!</strong> <%= params[:word].upcase %> is a valid English word.
+<% end %>
+
+<p><%= link_to "Play again", new_path %></p>
+
+
+<!-- <p>Sorry but <strong><%= @word %></strong> can't be built out of <%= @something %></p>
+
+ -->

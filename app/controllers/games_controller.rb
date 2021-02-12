@@ -1,9 +1,23 @@
+require 'open-uri'
+require 'json'
+
 class GamesController < ApplicationController
   def new
-    letter_array = ('a'.. 'z').to_a
-    @letters = letter_array.sample(10).join(" ")
+    @letters = ('A'..'Z').to_a.sample(10).join(" ")
+    @letters
   end
 
+  # def english_word?(word)
+  #   url = "https://wagon-dictionary.herokuapp.com/#{word}"
+  #   user_serialized = open(url).read
+  #   json_file = JSON.parse(user_serialized)
+  #   json_file["found"]
+  # end
+
   def score
+    url = "https://wagon-dictionary.herokuapp.com/#{params[:word]}"
+    user_serialized = open(url).read
+    json_file = JSON.parse(user_serialized)
+    @english_word = json_file["found"]
   end
 end
