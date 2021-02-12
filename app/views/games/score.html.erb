@@ -2,6 +2,8 @@
 
 <% if @english_word == true %>
 <strong>Congratulations!</strong> <%= params[:word].upcase %> is a valid English word.
+<% else  %>
+<%= params[:word].upcase %> is a not valid English word.
 <% end %>
 
 <p><%= link_to "Play again", new_path %></p>
